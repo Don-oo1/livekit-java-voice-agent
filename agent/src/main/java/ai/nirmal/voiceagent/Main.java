@@ -1,5 +1,6 @@
 package ai.nirmal.voiceagent;
 
+import ai.nirmal.voiceagent.agent.VoiceAgent;
 import ai.nirmal.voiceagent.livekit.LiveKitService;
 
 public class Main {
@@ -8,10 +9,8 @@ public class Main {
 
         LiveKitService service = new LiveKitService();
 
-        String token = service.createAgentToken();
+        VoiceAgent agent = new VoiceAgent(service);
 
-        System.out.println("Room: " + service.getRoomName());
-        System.out.println("Agent: " + service.getAgentIdentity());
-        System.out.println("Token: " + token);
+        agent.start();
     }
 }
