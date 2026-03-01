@@ -12,6 +12,7 @@ public class TokenGenerator {
             String room,
             String identity) {
 
+        System.out.println("apiKey: "+apiKey);
         AccessToken token = new AccessToken(apiKey, apiSecret);
 
         token.setIdentity(identity);

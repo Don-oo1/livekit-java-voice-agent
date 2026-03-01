@@ -1,9 +1,17 @@
 package ai.nirmal.voiceagent;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import ai.nirmal.voiceagent.livekit.LiveKitService;
+
 public class Main {
+
     public static void main(String[] args) {
 
+        LiveKitService service = new LiveKitService();
+
+        String token = service.createAgentToken();
+
+        System.out.println("Room: " + service.getRoomName());
+        System.out.println("Agent: " + service.getAgentIdentity());
+        System.out.println("Token: " + token);
     }
 }
